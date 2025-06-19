@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* General Page Container Styles */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem; /* p-6 */
+  text-align: center;
+}
+
+/* Card Styles */
+.card {
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-2xl */
+  padding: 2rem; /* p-8 */
+  width: 100%;
+  max-width: 48rem; /* max-w-2xl or max-w-4xl for treasure */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Card Padding */
+@media (min-width: 768px) { /* md */
+  .card {
+    padding: 3rem; /* md:p-12 */
+  }
+}
+
+/* General Button Styles */
+.button {
+  padding: 1rem 2rem; /* px-8 py-4 */
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transform: scale(1);
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.5); /* focus:ring-4 */
+}
+
+.button-disabled {
+  background-color: #d1d5db !important; /* bg-gray-300 */
+  color: #6b7280 !important; /* text-gray-600 */
+  cursor: not-allowed !important;
+  transform: scale(1) !important;
+  box-shadow: none !important;
+}
+
+/* Primary Button Pink */
+.primary-button {
+  background-color: #ec4899; /* bg-pink-500 */
+  color: #ffffff; /* text-white */
+}
+.primary-button:hover {
+  background-color: #db2777; /* hover:bg-pink-600 */
+}
+.primary-button:focus {
+  box-shadow: 0 0 0 4px rgba(251, 182, 209, 0.5); /* focus:ring-pink-300 */
+}
+
+/* Primary Button Blue */
+.primary-button-blue {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff;
+}
+.primary-button-blue:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}
+.primary-button-blue:focus {
+  box-shadow: 0 0 0 4px rgba(147, 197, 253, 0.5); /* focus:ring-blue-300 */
+}
+
+/* Primary Button Green */
+.primary-button-green {
+  background-color: #22c55e; /* bg-green-500 */
+  color: #ffffff;
+}
+.primary-button-green:hover {
+  background-color: #16a34a; /* hover:bg-green-600 */
+}
+.primary-button-green:focus {
+  box-shadow: 0 0 0 4px rgba(134, 239, 172, 0.5); /* focus:ring-green-300 */
+}
+
+/* Primary Button Orange */
+.primary-button-orange {
+  background-color: #f97316; /* bg-orange-500 */
+  color: #ffffff;
+}
+.primary-button-orange:hover {
+  background-color: #ea580c; /* hover:bg-orange-600 */
+}
+.primary-button-orange:focus {
+  box-shadow: 0 0 0 4px rgba(253, 186, 116, 0.5); /* focus:ring-orange-300 */
+}
+
+/* Primary Button Red */
+.primary-button-red {
+  background-color: #ef4444; /* bg-red-500 */
+  color: #ffffff;
+}
+.primary-button-red:hover {
+  background-color: #dc2626; /* hover:bg-red-600 */
+}
+.primary-button-red:focus {
+  box-shadow: 0 0 0 4px rgba(252, 165, 165, 0.5); /* focus:ring-red-300 */
+}
+
+/* Secondary Button Purple */
+.secondary-button-purple {
+  background-color: #a855f7; /* bg-purple-500 */
+  color: #ffffff;
+}
+.secondary-button-purple:hover {
+  background-color: #9333ea; /* hover:bg-purple-600 */
+}
+.secondary-button-purple:focus {
+  box-shadow: 0 0 0 4px rgba(214, 187, 250, 0.5); /* focus:ring-purple-300 */
+}
+
+/* Secondary Button Gray */
+.secondary-button-gray {
+  background-color: #6b7280; /* bg-gray-500 */
+  color: #ffffff;
+}
+.secondary-button-gray:hover {
+  background-color: #4b5563; /* hover:bg-gray-600 */
+}
+.secondary-button-gray:focus {
+  box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.5); /* focus:ring-gray-300 */
+}
+
+
+/* Welcome Page Specific Styles */
+.welcome-page-bg {
+  background: linear-gradient(to bottom right, #fce7f3, #e9d5ff); /* from-pink-100 to-purple-200 */
+  background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), linear-gradient(to bottom right, #fce7f3, #e9d5ff);
+  background-size: 80px 80px, 100% 100%;
+  background-repeat: repeat;
+}
+.welcome-title {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 800; /* font-extrabold */
+  color: #be185d; /* text-pink-700 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+.welcome-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: #6b21a8; /* text-purple-800 */
+  margin-bottom: 2.5rem; /* mb-10 */
+}
+@media (min-width: 768px) {
+  .welcome-title {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+  .welcome-subtitle {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+}
+
+/* Question Page Specific Styles */
+.question-page-bg {
+  background: linear-gradient(to bottom right, #dbeafe, #dcfce7); /* from-blue-100 to-green-200 */
+  background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), linear-gradient(to bottom right, #dbeafe, #dcfce7);
+  background-size: 80px 80px, 100% 100%;
+  background-repeat: repeat;
+}
+.question-card {
+  max-width: 32rem; /* max-w-2xl */
+}
+.card-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+@media (min-width: 768px) {
+  .card-title {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+.question-text {
+  font-size: 1.25rem; /* text-2xl (was text-2xl md:text-3xl) */
+  color: #374151; /* text-gray-700 */
+  margin-bottom: 2rem; /* mb-8 */
+  line-height: 1.625; /* leading-relaxed */
+}
+@media (min-width: 768px) {
+  .question-text {
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+.question-textarea {
+  width: 100%;
+  padding: 1rem; /* p-4 */
+  border: 2px solid #d1d5db; /* border-2 border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 1.125rem; /* text-lg */
+  resize: vertical; /* resize-none, changed to vertical for better UX */
+  height: 8rem; /* h-32 */
+  margin-bottom: 2rem; /* mb-8 */
+  transition: border-color 0.3s;
+}
+.question-textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* focus:border-blue-500 */
+}
+@media (min-width: 768px) {
+  .question-textarea {
+    font-size: 1.25rem; /* md:text-xl */
+    height: 10rem; /* md:h-40 */
+  }
+}
+.button-group {
+  display: flex;
+  flex-direction: column; /* flex-col */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* gap-4 */
+}
+@media (min-width: 768px) {
+  .button-group {
+    flex-direction: row; /* md:flex-row */
+  }
+}
+.llm-message {
+  margin-top: 1.5rem; /* mt-6 */
+  font-size: 1.25rem; /* text-xl */
+  color: #6b21a8; /* text-purple-700 */
+  font-weight: 500; /* font-medium */
+}
+
+/* Game Specific Styles */
+.game-card {
+  max-width: 32rem; /* w-full max-w-2xl */
+  padding: 2rem 3rem;
+}
+.game-title-green { color: #16a34a; } /* text-green-700 */
+.game-title-orange { color: #ea580c; } /* text-orange-700 */
+.game-title-red { color: #dc2626; } /* text-red-700 */
+.game-title-pink { color: #db2777; } /* text-pink-700 */
+
+.game-instructions {
+  font-size: 1.25rem; /* text-xl */
+  color: #374151; /* text-gray-700 */
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.game-message {
+  margin-top: 1.5rem; /* mt-6 */
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+.game-message-success { color: #16a34a; } /* text-green-600 */
+.game-message-error { color: #dc2626; } /* text-red-600 */
+
+/* Sudoku Game Specifics */
+.sudoku-page-bg {
+  background: linear-gradient(to bottom right, #dcfce7, #fefce8); /* from-green-100 to-yellow-200 */
+}
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem; /* gap-1 */
+  border: 4px solid #4b5563; /* border-4 border-gray-600 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.25rem; /* p-1 */
+}
+.sudoku-cell {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  font-size: 1.5rem; /* text-2xl */
+  text-align: center;
+  font-weight: 700; /* font-bold */
+  border: 1px solid #9ca3af; /* border border-gray-400 */
+  border-radius: 0.375rem; /* rounded-md */
+  transition: all 0.15s;
+}
+@media (min-width: 768px) {
+  .sudoku-cell {
+    width: 4rem; /* md:w-16 */
+    height: 4rem; /* md:h-16 */
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+.sudoku-cell-fixed {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #374151; /* text-gray-700 */
+  cursor: not-allowed;
+}
+.sudoku-cell-editable {
+  background-color: #ffffff; /* bg-white */
+  color: #1d4ed8; /* text-blue-700 */
+}
+.sudoku-cell-editable:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+}
+/* Thicker borders for 2x2 subgrids */
+.sudoku-border-right {
+  border-right: 4px solid #4b5563 !important; /* border-r-4 border-gray-600 */
+}
+.sudoku-border-bottom {
+  border-bottom: 4px solid #4b5563 !important; /* border-b-4 border-gray-600 */
+}
+
+/* Ball Game Specifics */
+.ball-game-page-bg {
+  background: linear-gradient(to bottom right, #fefce8, #ffedd5); /* from-yellow-100 to-orange-200 */
+}
+.game-canvas {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  border: 4px solid #f97316; /* border-4 border-orange-500 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* shadow-inner */
+  width: 100%;
+  height: 20rem; /* h-80 */
+}
+@media (min-width: 768px) {
+  .game-canvas {
+    height: 24rem; /* md:h-96 */
+  }
+}
+
+/* On-screen controls */
+.on-screen-controls {
+  margin-top: 2rem; /* mt-8 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem; /* gap-2 */
+  width: 12rem; /* w-48 */
+}
+.control-button {
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff;
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: background-color 0.15s;
+  touch-action: manipulation; /* Important for touch events */
+}
+.control-button:active {
+  background-color: #2563eb; /* active:bg-blue-700 */
+}
+.control-button-center {
+  grid-column: 2;
+}
+.control-spacer {
+  grid-column: 2; /* Occupy center cell for layout */
+  text-align: center;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700;
+  color: #374151; /* text-gray-700 */
+}
+.button-group-bottom {
+  margin-top: 2rem; /* mt-8 */
+  display: flex;
+  gap: 1rem; /* gap-4 */
+}
+.secondary-button-gray {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  font-size: 1.125rem; /* text-lg */
+  background-color: #6b7280;
+  color: #ffffff;
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.secondary-button-gray:hover {
+  background-color: #4b5563;
+  transform: scale(1.05);
+}
+.secondary-button-gray:focus {
+  box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.5);
+}
+
+
+/* Maze Game Specifics */
+.maze-page-bg {
+  background: linear-gradient(to bottom right, #ffedd5, #fee2e2); /* from-orange-100 to-red-200 */
+}
+.game-canvas-red {
+  border-color: #ef4444; /* border-red-500 */
+  max-width: 100%;
+  max-height: 450px;
+}
+
+
+/* Snake Game Specifics */
+.snake-game-page-bg {
+  background: linear-gradient(to bottom right, #fee2e2, #fce7f3); /* from-red-100 to-pink-200 */
+}
+.game-canvas-pink {
+  border-color: #ec4899; /* border-pink-500 */
+  max-width: 100%;
+  max-height: 450px; /* Ensure canvas doesn't overflow */
+}
+
+
+/* Treasure Page Specific Styles */
+.treasure-page-bg {
+  /* Changed to solid pink background as requested, keeping stars */
+  background: #fce7f3; /* Light pink background */
+  background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px);
+  background-size: 80px 80px;
+  background-repeat: repeat;
+}
+.treasure-card {
+  width: 95%; /* Adjust card width for better responsiveness */
+  max-width: 50rem; /* max-w-xl (800px) as a flexible upper limit */
+  height: auto; /* Allow content to define height */
+  /* Removed max-height to allow card to extend full length */
+  padding: 2rem; /* Ensure adequate padding */
+}
+.treasure-title {
+  font-size: 3.75rem; /* text-5xl */
+  font-weight: 800; /* font-extrabold */
+  color: #6b21a8; /* text-purple-700 */
+  margin-bottom: 2rem; /* mb-8 */
+}
+@media (min-width: 768px) {
+  .treasure-title {
+    font-size: 4.5rem; /* md:text-6xl */
+  }
+}
+.treasure-message-text {
+  font-size: 1.25rem; /* text-xl */
+  color: #1f2937; /* text-gray-800 */
+  line-height: 2; /* leading-loose */
+  white-space: pre-wrap; /* For preserving line breaks in the message */
+  text-align: right; /* Explicitly align right for Arabic */
+}
+@media (min-width: 768px) {
+  .treasure-message-text {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fade-in 1s ease-out; }
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down { animation: fade-in-down 0.8s ease-out; }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.8s ease-out; }
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-left { animation: slide-in-left 0.8s ease-out; }
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in { animation: scale-in 0.6s ease-out; }
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow { animation: bounce-slow 2s infinite ease-in-out; }
+
+@keyframes bounce-short {
+  0%, 100% { transform: translateY(0); }
+  20%, 80% { transform: translateY(-5px); }
+  40%, 60% { transform: translateY(0); }
+}
+.animate-bounce-short { animation: bounce-short 1s ease-in-out; }
